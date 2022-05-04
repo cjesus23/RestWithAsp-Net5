@@ -72,6 +72,18 @@ public class CalculatorController : ControllerBase
         return BadRequest("Invalid Input");
     }
 
+    [HttpGet("meam/{firstNumber}/{secondNumber}")]
+    public IActionResult Mean(string firstNumber, string secondNumber)
+    {
+        if (IsNumeric(firstNumber) && IsNumeric(secondNumber))
+        {
+            var meam = (ConvertToDecimal(firstNumber) / ConvertToDecimal(secondNumber))/2;
+            return Ok(meam.ToString());
+        }
+
+        return BadRequest("Invalid Input");
+    }
+
     private bool IsNumeric(string strNumber)
     {
         double number;
