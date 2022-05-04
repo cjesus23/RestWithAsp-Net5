@@ -1,6 +1,6 @@
 namespace RestWithAspNet;
 
-public class WeatherForecast
+public class Calculator
 {
     public DateTime Date { get; set; }
 
